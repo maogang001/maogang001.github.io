@@ -3,7 +3,7 @@ layout: none
 title: 毛刚的个人博客
 ---
 
-<!-- 解决Jekyll解析HTML标签的冲突问题，去掉DOCTYPE声明，用Jekyll兼容的写法 -->
+<!-- 全局样式：包含动画、布局、隐藏冗余文字 -->
 <style>
   /* 全局重置 */
   * {
@@ -17,7 +17,12 @@ title: 毛刚的个人博客
     padding: 20px;
   }
 
-  /* 顶部动画栏 */
+  /* 🔥 关键：隐藏左上角意外显示的文本（如<!DOCTYPE html>） */
+  body > :first-child {
+    display: none !important;
+  }
+
+  /* 顶部动画栏（恢复小球动画） */
   .top-animation-bar {
     width: 95%;
     max-width: 1200px;
@@ -41,6 +46,7 @@ title: 毛刚的个人博客
     border-radius: 50%;
     animation: bounce 2s infinite ease-in-out;
   }
+  /* 小球颜色+延迟（完整保留） */
   .ball1 { background: #ff9a9e; animation-delay: 0s; }
   .ball2 { background: #fad0c4; animation-delay: 0.3s; }
   .ball3 { background: #f6d365; animation-delay: 0.6s; }
@@ -56,6 +62,7 @@ title: 毛刚的个人博客
   .ball13 { background: #f6d365; animation-delay: 3.6s; }
   .ball14 { background: #84fab0; animation-delay: 4.2s; }
   .ball15 { background: #8fd3f4; animation-delay: 4.5s; }
+  /* 小球弹跳动画（完整保留） */
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
@@ -153,19 +160,26 @@ title: 毛刚的个人博客
     line-height: 2;
     color: #666;
   }
-
-  /* 🔥 关键：隐藏Jekyll解析时意外显示的HTML标签文本 */
-  body > :first-child {
-    display: none !important;
-  }
 </style>
 
-<!-- 顶部动画栏 -->
+<!-- 顶部动画栏（恢复小球，完整保留） -->
 <div class="top-animation-bar">
   <div class="cute-animation">
-    <div class="ball ball1"></div><div class="ball ball2"></div><div class="ball ball3"></div><div class="ball ball4"></div><div class="ball ball5"></div>
-    <div class="ball ball6"></div><div class="ball ball7"></div><div class="ball ball8"></div><div class="ball ball9"></div><div class="ball ball10"></div>
-    <div class="ball ball11"></div><div class="ball ball12"></div><div class="ball ball13"></div><div class="ball ball14"></div><div class="ball ball15"></div>
+    <div class="ball ball1"></div>
+    <div class="ball ball2"></div>
+    <div class="ball ball3"></div>
+    <div class="ball ball4"></div>
+    <div class="ball ball5"></div>
+    <div class="ball ball6"></div>
+    <div class="ball ball7"></div>
+    <div class="ball ball8"></div>
+    <div class="ball ball9"></div>
+    <div class="ball ball10"></div>
+    <div class="ball ball11"></div>
+    <div class="ball ball12"></div>
+    <div class="ball ball13"></div>
+    <div class="ball ball14"></div>
+    <div class="ball ball15"></div>
   </div>
 </div>
 
