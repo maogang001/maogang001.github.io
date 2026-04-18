@@ -8,18 +8,18 @@ url: "https://maogang001.github.io"
 theme: minima
 markdown: kramdown
 plugins:
-  - jekyll-feed
+  # - jekyll-feed  # 注释掉：关闭 RSS 订阅生成
   - jekyll-seo-tag
 
 minima:
   skin: auto
-  show_excerpts: true
+  show_excerpts: false  # 改成 false：关闭文章摘要显示
   date_format: "%Y-%m-%d"
 
 header_pages:
-  - about.md
-  - life.md
-  - diary.md
-  - tech-notes.md
-  - share.md
-  - collection.md
+  - life.md: 我的生活记录
+  - diary.md: 我的日记
+  - tech-notes.md: 我的技术笔记
+  - share.md: 我的日常分享
+  - collection.md: 我的收藏
+  - aboutme.md: 这就是我!
