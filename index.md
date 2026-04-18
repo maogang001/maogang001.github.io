@@ -1,6 +1,8 @@
 ---
 layout: home
-title: 毛刚的个人博客
+<a href="/" style="text-decoration: none; color: inherit;">
+  <h1>毛刚的个人博客</h1>
+</a>
 ---
 
 <!-- 自定义三列布局样式 -->
@@ -154,9 +156,6 @@ title: 毛刚的个人博客
   <!-- 左侧栏：基础导航 + 访问量统计 -->
   <div class="left-column">
     <div class="blog-title">基础导航</div>
-    <div class="personal-intro">
-      <a href="/aboutme.md">个人完整介绍 →</a>
-    </div>
 
     <!-- 分隔线 -->
     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
