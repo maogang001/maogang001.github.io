@@ -144,17 +144,29 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* 隐藏所有红色区域文字（标题+底部域名） */
-  .site-header, .page-heading, .site-title, 
-  footer div:first-child, .site-footer .footer-col:first-child {
+  /* 🔥 关键修复：精准隐藏所有域名文字（包括绿色框里的） */
+  .site-header, .page-heading, .site-title,
+  footer, .site-footer,
+  div:contains("maogang001github.io"),
+  span:contains("maogang001github.io"),
+  p:contains("maogang001github.io") {
+    display: none !important;
+    visibility: hidden !important;
+  }
+  /* 兜底：强制隐藏页脚第一列/所有域名相关元素 */
+  .footer-col-1, .footer-col:first-child,
+  [class*="footer"] div:not(p), [class*="footer"] span {
     display: none !important;
   }
 
-  /* 页脚文字样式 */
-  footer p, .site-footer p {
+  /* 页脚文字样式（只保留座右铭） */
+  .site-footer p, footer p {
     white-space: pre-line !important;
     line-height: 2 !important;
     text-align: center !important;
+    display: block !important; /* 确保座右铭显示 */
+    margin: 0 auto !important;
+    padding: 20px 0 !important;
   }
 </style>
 
@@ -208,6 +220,15 @@ title: 毛刚的个人博客
 <!-- 页脚文字脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // 1. 彻底删除域名文字（兜底）
+  const elements = document.querySelectorAll('*');
+  elements.forEach(el => {
+    if (el.textContent.includes('maogang001github.io')) {
+      el.remove(); // 直接删除包含域名的元素
+    }
+  });
+
+  // 2. 确保页脚座右铭正常显示
   let footerText = document.querySelector('footer p') || document.querySelector('.site-footer p');
   if (footerText) {
     footerText.innerHTML = `
