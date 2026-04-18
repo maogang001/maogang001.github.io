@@ -154,7 +154,7 @@ title: 毛刚的个人博客
 <div class="home-container">
   <!-- 左侧栏：博客标题+个人介绍 -->
   <div class="left-column">
-    <div class="blog-title">个人介绍</div>
+    <div class="blog-title">基础导航</div>
     <div class="personal-intro">
       <a href="/aboutme.md">个人完整介绍 →</a>
     </div>
@@ -170,8 +170,8 @@ title: 毛刚的个人博客
   </div>
 
   <!-- 左侧栏：导航菜单（可跳转） -->
-    <div class="left-column">
-    <div class="blog-title">个人介绍</div>
+  <div class="left-column">
+    <div class="blog-title">高级导航</div>
     <div class="nav-item"><a href="/life">我的生活记录</a></div>
     <div class="nav-item"><a href="/diary">我的日记</a></div>
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
@@ -193,11 +193,9 @@ title: 毛刚的个人博客
 
 <!-- 左侧栏：博客标题+个人介绍 -->
 <div class="left-column">
-  <div class="blog-title">个人介绍</div>
-  <div class="personal-intro">
-    <a href="/aboutme.md">个人完整介绍 →</a>
+  <div class="blog-title">访问量</div>
     <br><br>
-    本站总访问量
+    访问
     <br>
     <span style="font-size:20px; font-weight:bold; color:#4299e1;">
       <script type="text/javascript" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
