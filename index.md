@@ -148,13 +148,6 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* 移动端适配（布局自动调整） */
-  @media (max-width: 768px) {
-    .home-container {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-  }
 </style>
 
 <!-- 三列布局主体 -->
@@ -195,6 +188,23 @@ title: 毛刚的个人博客
     <div class="nav-item"><a href="/share">我的日常分享</a></div>
     <div class="nav-item"><a href="/collection">我的收藏</a></div>
 	<div class="nav-item"><a href="/aboutme">关于俺</a></div>
+  </div>
+</div>
+
+<!-- 左侧栏：博客标题+个人介绍 -->
+<div class="left-column">
+  <div class="blog-title">个人介绍</div>
+  <div class="personal-intro">
+    <a href="/aboutme.md">个人完整介绍 →</a>
+    <br><br>
+    本站总访问量
+    <br>
+    <span style="font-size:20px; font-weight:bold; color:#4299e1;">
+      <script type="text/javascript" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+      <span id="busuanzi_value_site_pv"></span>
+    </span>
+    <br>
+    次
   </div>
 </div>
 
