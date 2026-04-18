@@ -1,126 +1,27 @@
 ---
-layout: home
+layout: default
 title: 毛刚的个人博客
 ---
 
-<!-- 自定义样式 -->
+<!-- 从零搭建布局，完全摆脱主题默认样式干扰 -->
 <style>
-  /* 🔥 第一步：彻底隐藏主题自带的头部、标题、域名（核心修复） */
-  /* 隐藏顶部域名+标题 */
-  .site-header, .site-title, .site-branding,
-  .page-heading, .home-heading,
-  /* 隐藏页脚域名 */
-  .site-footer .footer-col-1, .site-footer .footer-col:first-child,
-  /* 兜底：隐藏所有包含域名的元素 */
-  [class*="header"], [class*="title"] {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    width: 0 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    border: none !important;
-  }
-
-  /* 全局布局重置 */
-  .home-container {
-    width: 95%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0;
-    display: grid;
-    grid-template-columns: 20% 55% 20%;
-    gap: 2%;
+  /* 重置所有默认样式 */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Microsoft YaHei", sans-serif;
   }
-
-  /* 左侧栏样式 */
-  .left-column {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    background: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  .blog-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    text-align: center;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-    margin-bottom: 20px;
-  }
-  .personal-intro {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.6;
-    text-align: center;
-  }
-  .nav-item {
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-  }
-  .nav-item:last-child {
-    border-bottom: none;
-  }
-  .nav-item a {
-    font-size: 16px;
-    color: #333;
-    text-decoration: none;
-    transition: all 0.2s;
-  }
-  .nav-item a:hover {
-    color: #4299e1;
-    font-weight: bold;
-  }
-
-  /* 中间栏样式：完全填充空白 */
-  .middle-column {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 0 !important; /* 去掉内边距 */
+  body {
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: stretch; /* 拉伸子元素填满高度 */
-    justify-content: center;
-    min-height: 400px;
-    overflow: hidden; /* 防止图片溢出圆角 */
-  }
-  .img-container {
-    width: 100%; /* 容器占满中间栏宽度 */
-    height: 100%; /* 容器占满中间栏高度 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .img-container img {
-    width: 100%; /* 图片宽度铺满容器 */
-    height: 100%; /* 图片高度铺满容器 */
-    object-fit: cover; /* 图片铺满且不变形（裁剪多余部分） */
-    border-radius: 7px; /* 适配外层圆角（减1px避免边框重叠） */
-    box-shadow: none; /* 去掉阴影，避免遮挡 */
-  }
-  .img-desc {
-    display: none; /* 隐藏图片下方的~，避免占空间 */
+    padding: 20px;
   }
 
-  /* 右侧栏样式 */
-  .right-column {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 10px 0;
-    background: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-
-  /* 顶部动画栏（替换原来的标题） */
+  /* 顶部动画栏 */
   .top-animation-bar {
     width: 95%;
     max-width: 1200px;
-    margin: 20px auto;
+    margin: 0 auto 20px;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
@@ -133,7 +34,6 @@ title: 毛刚的个人博客
     justify-content: center;
     align-items: center;
     gap: 15px;
-    margin-top: 10px;
   }
   .ball {
     width: 30px;
@@ -161,22 +61,102 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* 页脚文字样式（只保留座右铭） */
-  .site-footer {
-    margin-top: 20px !important;
-    padding: 20px 0 !important;
-    border-top: 1px solid #eee !important;
+  /* 三列布局容器 */
+  .home-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 20% 55% 20%;
+    gap: 2%;
   }
-  .site-footer p {
-    white-space: pre-line !important;
-    line-height: 2 !important;
-    text-align: center !important;
-    margin: 0 auto !important;
-    padding: 0 !important;
+
+  /* 左侧栏 */
+  .left-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .blog-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+  }
+  .nav-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+  .nav-item a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-item a:hover {
+    color: #4299e1;
+    font-weight: bold;
+  }
+  .visit-count {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #666;
+  }
+  .visit-count span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4299e1;
+  }
+
+  /* 中间栏：图片全屏填充 */
+  .middle-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden;
+    min-height: 400px;
+  }
+  .middle-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 右侧栏 */
+  .right-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 0;
+    background: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /* 页脚 */
+  .footer {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    padding: 20px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+    line-height: 2;
+    color: #666;
   }
 </style>
 
-<!-- 顶部：动画栏（唯一的顶部元素） -->
+<!-- 页面所有内容：从零写，无主题默认元素干扰 -->
+<!-- 顶部动画栏 -->
 <div class="top-animation-bar">
   <div class="cute-animation">
     <div class="ball ball1"></div><div class="ball ball2"></div><div class="ball ball3"></div><div class="ball ball4"></div><div class="ball ball5"></div>
@@ -185,7 +165,7 @@ title: 毛刚的个人博客
   </div>
 </div>
 
-<!-- 三列布局主体 -->
+<!-- 三列布局 -->
 <div class="home-container">
   <!-- 左侧栏 -->
   <div class="left-column">
@@ -195,20 +175,18 @@ title: 毛刚的个人博客
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
     <div class="blog-title">访问量</div>
-    <div class="personal-intro">
+    <div class="visit-count">
       访问<br>
-      <span style="font-size:20px; font-weight:bold; color:#4299e1;">
+      <span>
         <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <span id="busuanzi_value_site_pv"></span>
       </span><br>次
     </div>
   </div>
 
-  <!-- 中间栏：图片完全填充 -->
+  <!-- 中间栏：图片 -->
   <div class="middle-column">
-    <div class="img-container">
-      <img src="./photos/007.jpg" alt="我的图片">
-    </div>
+    <img src="./photos/007.jpg" alt="我的图片">
   </div>
 
   <!-- 右侧栏 -->
@@ -223,26 +201,10 @@ title: 毛刚的个人博客
   </div>
 </div>
 
-<!-- 页脚文字脚本（只设置座右铭） -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // 1. 兜底删除：如果还有域名文字，直接清空内容
-  const allElements = document.querySelectorAll('*');
-  allElements.forEach(el => {
-    if (el.textContent.includes('maogang001github.io') || el.textContent.includes('毛刚的个人博客') && el.className.includes('site')) {
-      el.textContent = ''; // 清空内容，不删除元素（避免页面崩）
-    }
-  });
-
-  // 2. 设置页脚座右铭
-  let footerText = document.querySelector('.site-footer p');
-  if (footerText) {
-    footerText.innerHTML = `
-      知不足而奋进，望远山而行---<br>
-      学习的敌人是自己的满足，<br>
-      要认真学习一点东西，必须从不自满开始。<br>
-      —— 毛泽东
-    `;
-  }
-});
-</script>
+<!-- 页脚 -->
+<div class="footer">
+  知不足而奋进，望远山而行---<br>
+  学习的敌人是自己的满足，<br>
+  要认真学习一点东西，必须从不自满开始。<br>
+  —— 毛泽东
+</div>
