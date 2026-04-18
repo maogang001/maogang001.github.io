@@ -17,7 +17,7 @@ title: 毛刚的个人博客
     font-family: "Microsoft YaHei", sans-serif;
   }
 
-  /* 左侧栏：博客标题+个人介绍 */
+  /* 左侧栏：博客标题+个人介绍+访问量 */
   .left-column {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -147,30 +147,44 @@ title: 毛刚的个人博客
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
-
 </style>
 
 <!-- 三列布局主体 -->
 <div class="home-container">
-  <!-- 左侧栏：博客标题+个人介绍 -->
+  <!-- 左侧栏：基础导航 + 访问量统计 -->
   <div class="left-column">
     <div class="blog-title">基础导航</div>
     <div class="personal-intro">
       <a href="/aboutme.md">个人完整介绍 →</a>
+    </div>
+
+    <!-- 分隔线 -->
+    <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+
+    <!-- 访问量统计 -->
+    <div class="blog-title">访问量</div>
+    <div class="personal-intro">
+      访问
+      <br>
+      <span style="font-size:20px; font-weight:bold; color:#4299e1;">
+        <script type="text/javascript" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+      <br>
+      次
     </div>
   </div>
 
   <!-- 中间栏：图片展示区 -->
   <div class="middle-column">
     <div class="img-container">
-      <!-- 替换成你的图片地址（上传到仓库后改路径） -->
       <img src="./photos/007.jpg" alt="我的图片">
       <div class="img-desc">~</div>
     </div>
   </div>
 
-  <!-- 左侧栏：导航菜单（可跳转） -->
-  <div class="left-column">
+  <!-- 右侧栏：高级导航菜单 -->
+  <div class="right-column">
     <div class="blog-title">高级导航</div>
     <div class="nav-item"><a href="/life">我的生活记录</a></div>
     <div class="nav-item"><a href="/diary">我的日记</a></div>
@@ -178,31 +192,6 @@ title: 毛刚的个人博客
     <div class="nav-item"><a href="/share">我的日常分享</a></div>
     <div class="nav-item"><a href="/collection">我的收藏</a></div>
     <div class="nav-item"><a href="/aboutme">关于俺</a></div>
-  </div>
-
-  <!-- 右侧栏：导航菜单（可跳转） -->
-  <div class="right-column">
-    <div class="nav-item"><a href="/life">我的生活记录</a></div>
-    <div class="nav-item"><a href="/diary">我的日记</a></div>
-    <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
-    <div class="nav-item"><a href="/share">我的日常分享</a></div>
-    <div class="nav-item"><a href="/collection">我的收藏</a></div>
-	<div class="nav-item"><a href="/aboutme">关于俺</a></div>
-  </div>
-</div>
-
-<!-- 左侧栏：博客标题+个人介绍 -->
-<div class="left-column">
-  <div class="blog-title">访问量</div>
-    <br><br>
-    访问
-    <br>
-    <span style="font-size:20px; font-weight:bold; color:#4299e1;">
-      <script type="text/javascript" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-      <span id="busuanzi_value_site_pv"></span>
-    </span>
-    <br>
-    次
   </div>
 </div>
 
@@ -214,16 +203,15 @@ title: 毛刚的个人博客
     <div class="ball ball3"></div>
     <div class="ball ball4"></div>
     <div class="ball ball5"></div>
-	<div class="ball ball6"></div>
+    <div class="ball ball6"></div>
     <div class="ball ball7"></div>
     <div class="ball ball8"></div>
     <div class="ball ball9"></div>
     <div class="ball ball10"></div>
-	<div class="ball ball11"></div>
-	<div class="ball ball12"></div>
+    <div class="ball ball11"></div>
+    <div class="ball ball12"></div>
     <div class="ball ball13"></div>
     <div class="ball ball14"></div>
-	<div class="ball ball15"></div>
+    <div class="ball ball15"></div>
   </div>
 </div>
-
