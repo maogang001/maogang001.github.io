@@ -10,7 +10,6 @@ markdown: kramdown
 plugins:
   # - jekyll-feed  # 注释掉：关闭 RSS 订阅生成
   - jekyll-seo-tag
-
 minima:
   skin: auto
   show_excerpts: false  # 改成 false：关闭文章摘要显示
@@ -22,4 +21,4 @@ header_pages:
   - tech-notes.md: 我的技术笔记
   - share.md: 我的日常分享
   - collection.md: 我的收藏
-  - aboutme.md: 这就是我!
+  - aboutme.md: 关于我!

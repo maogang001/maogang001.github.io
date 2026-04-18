@@ -3,7 +3,7 @@ layout: home
 title: 毛刚的个人博客
 ---
 
-<!-- 自定义布局样式 -->
+<!-- 自定义三列布局样式 -->
 <style>
   /* 全局布局重置 */
   .home-container {
@@ -12,9 +12,8 @@ title: 毛刚的个人博客
     margin: 0 auto;
     padding: 20px 0;
     display: grid;
-    /* 调整布局比例：左侧25% + 中间70%，去掉右侧重复菜单 */
-    grid-template-columns: 25% 70%;
-    gap: 5%;
+    grid-template-columns: 20% 55% 20%;
+    gap: 2%;
     font-family: "Microsoft YaHei", sans-serif;
   }
 
@@ -49,7 +48,7 @@ title: 毛刚的个人博客
     text-decoration: underline;
   }
 
-  /* 中间栏：图片展示区（占比更大，更美观） */
+  /* 中间栏：图片展示区 */
   .middle-column {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -59,14 +58,14 @@ title: 毛刚的个人博客
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 450px;
+    min-height: 400px;
   }
   .img-container {
     text-align: center;
   }
   .img-container img {
     max-width: 100%;
-    max-height: 400px;
+    max-height: 350px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
@@ -74,6 +73,33 @@ title: 毛刚的个人博客
     margin-top: 15px;
     color: #777;
     font-size: 14px;
+  }
+
+  /* 右侧栏：导航菜单 */
+  .right-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 0;
+    background: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .nav-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+  }
+  .nav-item:last-child {
+    border-bottom: none;
+  }
+  .nav-item a {
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-item a:hover {
+    color: #4299e1;
+    font-weight: bold;
   }
 
   /* 底部动画栏 */
@@ -107,6 +133,12 @@ title: 毛刚的个人博客
   .ball3 { background: #f6d365; animation-delay: 0.6s; }
   .ball4 { background: #84fab0; animation-delay: 0.9s; }
   .ball5 { background: #8fd3f4; animation-delay: 1.2s; }
+  .ball6 { background: #f6d365; animation-delay: 1.5s; }
+  .ball7 { background: #84fab0; animation-delay: 1.8s; }
+  .ball8 { background: #8fd3f4; animation-delay: 2.1s; }
+  .ball9 { background: #f6d365; animation-delay: 2.4s; }
+  .ball10 { background: #84fab0; animation-delay: 2.7s; }
+  .ball11 { background: #8fd3f4; animation-delay: 3.0s; }
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
@@ -121,28 +153,37 @@ title: 毛刚的个人博客
   }
 </style>
 
-<!-- 修正后的布局：左+中两列，去掉右侧重复菜单 -->
+<!-- 三列布局主体 -->
 <div class="home-container">
-  <!-- 左侧栏：博客标题+个人介绍（保留） -->
+  <!-- 左侧栏：博客标题+个人介绍 -->
   <div class="left-column">
-    <div class="blog-title">右边是我！</div>
+    <div class="blog-title">个人介绍</div>
     <div class="personal-intro">
       这里是我个人的一些介绍<br>
-      <a href="/photos/aboutme.md">点击查看完整个人介绍 →</a>
+      <a href="/about">点击查看完整个人介绍 →</a>
     </div>
   </div>
 
-  <!-- 中间栏：图片展示区（占比更大，更协调） -->
+  <!-- 中间栏：图片展示区 -->
   <div class="middle-column">
     <div class="img-container">
-      <!-- 你的图片地址，不用改 -->
-      <img src="https://picsum.photos/600/400" alt="我的图片">
-      <div class="img-desc">这是我</div>
+      <!-- 替换成你的图片地址（上传到仓库后改路径） -->
+      <img src="https://picsum.photos/600/300" alt="我的图片">
+      <div class="img-desc">~</div>
     </div>
+  </div>
+
+  <!-- 右侧栏：导航菜单（可跳转） -->
+  <div class="right-column">
+    <div class="nav-item"><a href="/life">我的生活记录</a></div>
+    <div class="nav-item"><a href="/diary">我的日记</a></div>
+    <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
+    <div class="nav-item"><a href="/share">我的日常分享</a></div>
+    <div class="nav-item"><a href="/collection">我的收藏</a></div>
   </div>
 </div>
 
-<!-- 底部动画栏（保留可爱动画） -->
+<!-- 底部动画栏 -->
 <div class="animation-bar">
   这一排显示一些动画
   <div class="cute-animation">
@@ -151,5 +192,11 @@ title: 毛刚的个人博客
     <div class="ball ball3"></div>
     <div class="ball ball4"></div>
     <div class="ball ball5"></div>
+	<div class="ball ball6"></div>
+    <div class="ball ball7"></div>
+    <div class="ball ball8"></div>
+    <div class="ball ball9"></div>
+    <div class="ball ball10"></div>
+	<div class="ball ball11"></div>
   </div>
 </div>
