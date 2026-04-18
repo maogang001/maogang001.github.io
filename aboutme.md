@@ -40,35 +40,35 @@ layout: page
   <a href="/" class="back-home">← 返回首页</a>
 </div>
 
-![008](F:\git _project\maogang001.github.io\photos\008.jpg)
+![008](\photos\008.jpg)
 
 ------
 
-![](F:\git _project\maogang001.github.io\photos\001.jpg)
+![](\photos\001.jpg)
 
 ------
 
-![002](F:\git _project\maogang001.github.io\photos\002.jpg)
+![002](\photos\002.jpg)
 
 ------
 
-![003](F:\git _project\maogang001.github.io\photos\003.jpg)
+![003](\photos\003.jpg)
 
 ------
 
-![004](F:\git _project\maogang001.github.io\photos\004.jpg)
+![004](\photos\004.jpg)
 
 ------
 
-![005](F:\git _project\maogang001.github.io\photos\005.jpg)
+![005](\photos\005.jpg)
 
 ------
 
-![006](F:\git _project\maogang001.github.io\photos\006.jpg)
+![006](\photos\006.jpg)
 
 ------
 
-![007](F:\git _project\maogang001.github.io\photos\007.jpg)
+![007](\photos\007.jpg)
 
 
 
