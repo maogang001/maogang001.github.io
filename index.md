@@ -216,3 +216,34 @@ layout: home
     <div class="ball ball15"></div>
   </div>
 </div>
+
+<!-- 新增：页脚文字分行样式 -->
+<style>
+  /* 匹配页脚文字的容器，强制分行 */
+  footer p, .site-footer p {
+    white-space: pre-line !important; /* 识别换行符自动分行 */
+    line-height: 2 !important; /* 行间距拉大，更易读 */
+    text-align: center !important; /* 文字居中 */
+  }
+ <!-- 隐藏底部的域名文字 -->
+footer div:first-child, .site-footer .footer-col:first-child {
+  display: none !important;
+}
+</style>
+
+<!-- 新增：重写页脚文字（分行版） -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // 找到页脚的文字容器
+  let footerText = document.querySelector('footer p') || document.querySelector('.site-footer p');
+  if (footerText) {
+    // 替换成分行的文字
+    footerText.innerHTML = `
+      知不足而奋进，望远山而行---<br>
+      学习的敌人是自己的满足，<br>
+      要认真学习一点东西，必须从不自满开始。<br>
+      —— 毛泽东
+    `;
+  }
+});
+</script>
