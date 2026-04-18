@@ -159,9 +159,6 @@ layout: home
 	<div class="nav-item"><a href="/life">我的生活记录</a></div>
     <div class="nav-item"><a href="/diary">我的日记</a></div>
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
-    <div class="nav-item"><a href="/share">我的日常分享</a></div>
-    <div class="nav-item"><a href="/collection">我的收藏</a></div>
-    <div class="nav-item"><a href="/aboutme">关于俺</a></div>
     <!-- 分隔线 -->
     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
 
