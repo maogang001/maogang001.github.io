@@ -171,9 +171,20 @@ title: 毛刚的个人博客
   <div class="middle-column">
     <div class="img-container">
       <!-- 替换成你的图片地址（上传到仓库后改路径） -->
-      <img src="./photos/005.jpg" alt="我的图片">
+      <img src="./photos/007.jpg" alt="我的图片">
       <div class="img-desc">~</div>
     </div>
+  </div>
+
+  <!-- 左侧栏：导航菜单（可跳转） -->
+    <div class="left-column">
+    <div class="blog-title">个人介绍</div>
+    <div class="nav-item"><a href="/life">我的生活记录</a></div>
+    <div class="nav-item"><a href="/diary">我的日记</a></div>
+    <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
+    <div class="nav-item"><a href="/share">我的日常分享</a></div>
+    <div class="nav-item"><a href="/collection">我的收藏</a></div>
+    <div class="nav-item"><a href="/aboutme">关于俺</a></div>
   </div>
 
   <!-- 右侧栏：导航菜单（可跳转） -->
