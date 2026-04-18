@@ -1,8 +1,6 @@
 ---
 layout: home
-<a href="/" style="text-decoration: none; color: inherit;">
-  <h1>毛刚的个人博客</h1>
-</a>
+title: 毛刚的个人博客
 ---
 
 <!-- 自定义三列布局样式 -->
@@ -149,14 +147,37 @@ layout: home
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
+
+  /* 页脚样式：分行 + 隐藏域名 */
+  footer p, .site-footer p {
+    white-space: pre-line !important; /* 文字分行 */
+    line-height: 2 !important; /* 行间距 */
+    text-align: center !important; /* 居中 */
+  }
+  /* 隐藏底部的域名文字 */
+  footer div:first-child, .site-footer .footer-col:first-child {
+    display: none !important;
+  }
+
+  /* 顶部标题样式（可点击） */
+  .site-title, h1 {
+    cursor: pointer; /* 鼠标变小手 */
+    text-align: center; /* 标题居中 */
+    margin: 20px 0; /* 上下留白 */
+  }
 </style>
+
+<!-- 顶部可点击的博客标题 -->
+<a href="/" style="text-decoration: none; color: inherit;">
+  <h1>毛刚的个人博客</h1>
+</a>
 
 <!-- 三列布局主体 -->
 <div class="home-container">
   <!-- 左侧栏：基础导航 + 访问量统计 -->
   <div class="left-column">
     <div class="blog-title">基础导航</div>
-	<div class="nav-item"><a href="/life">我的生活记录</a></div>
+    <div class="nav-item"><a href="/life">我的生活记录</a></div>
     <div class="nav-item"><a href="/diary">我的日记</a></div>
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
     <!-- 分隔线 -->
@@ -217,33 +238,25 @@ layout: home
   </div>
 </div>
 
-<!-- 新增：页脚文字分行样式 -->
-<style>
-  /* 匹配页脚文字的容器，强制分行 */
-  footer p, .site-footer p {
-    white-space: pre-line !important; /* 识别换行符自动分行 */
-    line-height: 2 !important; /* 行间距拉大，更易读 */
-    text-align: center !important; /* 文字居中 */
-  }
- <!-- 隐藏底部的域名文字 -->
-footer div:first-child, .site-footer .footer-col:first-child {
-  display: none !important;
-}
-</style>
-
-<!-- 新增：重写页脚文字（分行版） -->
+<!-- 页脚文字分行脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 找到页脚的文字容器
+  // 处理页脚文字分行
   let footerText = document.querySelector('footer p') || document.querySelector('.site-footer p');
   if (footerText) {
-    // 替换成分行的文字
     footerText.innerHTML = `
       知不足而奋进，望远山而行---<br>
       学习的敌人是自己的满足，<br>
       要认真学习一点东西，必须从不自满开始。<br>
       —— 毛泽东
     `;
+  }
+  // 兼容主题自带的顶部标题点击跳转
+  let title = document.querySelector('.site-title') || document.querySelector('h1');
+  if (title && !title.parentElement.tagName === 'A') {
+    title.onclick = function() {
+      window.location.href = '/';
+    };
   }
 });
 </script>
