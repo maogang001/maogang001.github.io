@@ -3,9 +3,7 @@ layout: none
 title: 毛刚的个人博客
 ---
 
-<!-- 全局样式：包含动画、布局、隐藏冗余文字 -->
 <style>
-  /* 全局重置 */
   * {
     margin: 0;
     padding: 0;
@@ -17,12 +15,11 @@ title: 毛刚的个人博客
     padding: 20px;
   }
 
-  /* 🔥 关键：隐藏左上角意外显示的文本（如<!DOCTYPE html>） */
   body > :first-child {
     display: none !important;
   }
 
-  /* 顶部动画栏（恢复小球动画） */
+  /* 顶部小球动画 */
   .top-animation-bar {
     width: 95%;
     max-width: 1200px;
@@ -46,7 +43,6 @@ title: 毛刚的个人博客
     border-radius: 50%;
     animation: bounce 2s infinite ease-in-out;
   }
-  /* 小球颜色+延迟（完整保留） */
   .ball1 { background: #ff9a9e; animation-delay: 0s; }
   .ball2 { background: #fad0c4; animation-delay: 0.3s; }
   .ball3 { background: #f6d365; animation-delay: 0.6s; }
@@ -62,13 +58,12 @@ title: 毛刚的个人博客
   .ball13 { background: #f6d365; animation-delay: 3.6s; }
   .ball14 { background: #84fab0; animation-delay: 4.2s; }
   .ball15 { background: #8fd3f4; animation-delay: 4.5s; }
-  /* 小球弹跳动画（完整保留） */
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
   }
 
-  /* 三列布局容器 */
+  /* 三列布局 */
   .home-container {
     width: 95%;
     max-width: 1200px;
@@ -125,7 +120,7 @@ title: 毛刚的个人博客
     color: #4299e1;
   }
 
-  /* 中间栏：图片全屏填充 */
+  /* 中间栏：自动随机轮播 */
   .middle-column {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -133,11 +128,13 @@ title: 毛刚的个人博客
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     overflow: hidden;
     min-height: 400px;
+    position: relative;
   }
-  .middle-column img {
+  #random-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: opacity 0.5s ease;
   }
 
   /* 右侧栏 */
@@ -162,7 +159,7 @@ title: 毛刚的个人博客
   }
 </style>
 
-<!-- 顶部动画栏（恢复小球，完整保留） -->
+<!-- 顶部小球 -->
 <div class="top-animation-bar">
   <div class="cute-animation">
     <div class="ball ball1"></div>
@@ -202,9 +199,23 @@ title: 毛刚的个人博客
     </div>
   </div>
 
-  <!-- 中间栏：图片 -->
+  <!-- 中间栏：网上随机图片自动轮播 -->
   <div class="middle-column">
-    <img src="./photos/007.jpg" alt="我的图片">
+    <img id="random-img" src="" alt="随机风景图">
+    <script>
+      // 随机图片接口（可商用、无版权）
+      const api = "https://picsum.photos/1200/800?random=";
+      const img = document.getElementById("random-img");
+
+      // 初始加载
+      function setImg() {
+        img.src = api + Date.now(); // 加时间戳防缓存
+      }
+      setImg();
+
+      // 每3秒自动换一张
+      setInterval(setImg, 3000);
+    </script>
   </div>
 
   <!-- 右侧栏 -->
