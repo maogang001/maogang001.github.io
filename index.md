@@ -164,7 +164,7 @@ title: 毛刚的个人博客
     <div class="blog-title">个人介绍</div>
     <div class="personal-intro">
       这里是我个人的一些介绍<br>
-      <a href="/about">点击查看完整个人介绍 →</a>
+      <a href="/aboutme.md">点击查看完整个人介绍 →</a>
     </div>
   </div>
 
