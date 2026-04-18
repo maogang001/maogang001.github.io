@@ -144,33 +144,21 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* 🔥 关键修复：精准隐藏所有域名文字（包括绿色框里的） */
-  .site-header, .page-heading, .site-title,
-  footer, .site-footer,
-  div:contains("maogang001github.io"),
-  span:contains("maogang001github.io"),
-  p:contains("maogang001github.io") {
-    display: none !important;
-    visibility: hidden !important;
+  /* ✅ 精准隐藏域名（只删maogang001github.io，不影响其他元素） */
+  .site-footer .footer-col-1 {
+    display: none !important; /* 只隐藏页脚第一列的域名 */
   }
-  /* 兜底：强制隐藏页脚第一列/所有域名相关元素 */
-  .footer-col-1, .footer-col:first-child,
-  [class*="footer"] div:not(p), [class*="footer"] span {
-    display: none !important;
-  }
-
   /* 页脚文字样式（只保留座右铭） */
-  .site-footer p, footer p {
+  .site-footer p {
     white-space: pre-line !important;
     line-height: 2 !important;
     text-align: center !important;
-    display: block !important; /* 确保座右铭显示 */
     margin: 0 auto !important;
     padding: 20px 0 !important;
   }
 </style>
 
-<!-- 顶部：用绿色动画栏替换原来的红色标题 -->
+<!-- 顶部：动画栏 -->
 <div class="top-animation-bar">
   <div class="cute-animation">
     <div class="ball ball1"></div><div class="ball ball2"></div><div class="ball ball3"></div><div class="ball ball4"></div><div class="ball ball5"></div>
@@ -217,19 +205,11 @@ title: 毛刚的个人博客
   </div>
 </div>
 
-<!-- 页脚文字脚本 -->
+<!-- 页脚文字脚本（只处理座右铭，不删任何元素） -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 1. 彻底删除域名文字（兜底）
-  const elements = document.querySelectorAll('*');
-  elements.forEach(el => {
-    if (el.textContent.includes('maogang001github.io')) {
-      el.remove(); // 直接删除包含域名的元素
-    }
-  });
-
-  // 2. 确保页脚座右铭正常显示
-  let footerText = document.querySelector('footer p') || document.querySelector('.site-footer p');
+  // 只设置页脚座右铭文字，不做任何删除操作
+  let footerText = document.querySelector('.site-footer p');
   if (footerText) {
     footerText.innerHTML = `
       知不足而奋进，望远山而行---<br>
