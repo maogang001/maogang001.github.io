@@ -1,21 +1,35 @@
-description: 知不足而奋进，望远山而力行---学习的敌人是自己的满足，要认真学习一点东西，必须从不自满开始。 —— 毛泽东
+# 博客描述（页脚座右铭，加 | 实现分行，配合 index.md 的 CSS 生效）
+description: |
+  知不足而奋进，望远山而力行---
+  学习的敌人是自己的满足，
+  要认真学习一点东西，必须从不自满开始。
+  —— 毛泽东
 
+# 网站根路径（正确，不用改）
 baseurl: ""
 
+# 使用 minima 主题
 theme: minima
+
+# 标记语言解析器
 markdown: kramdown
+
+# 插件配置
 plugins:
   # - jekyll-feed  # 注释掉：关闭 RSS 订阅生成
   - jekyll-seo-tag
-minima:
-  skin: auto
-  show_excerpts: false  # 改成 false：关闭文章摘要显示
-  date_format: "%Y-%m-%d"
 
+# minima 主题自定义配置
+minima:
+  skin: auto  # 自动适配浅色/深色模式
+  show_excerpts: false  # 关闭文章摘要显示（正确）
+  date_format: "%Y-%m-%d"  # 日期格式（正确）
+
+# 顶部导航栏配置（统一文字，和 index.md 里的导航对应）
 header_pages:
   - life.md: 我的生活记录
   - diary.md: 我的日记
   - tech-notes.md: 我的技术笔记
   - share.md: 我的日常分享
   - collection.md: 我的收藏
-  - aboutme.md: 关于我!
+  - aboutme.md: 关于俺  # 把「关于我!」改成「关于俺」，和 index.md 统一
