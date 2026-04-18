@@ -148,6 +148,25 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
+  /* 隐藏主题自带的顶部域名、重复标题 */
+  .site-header, .page-heading, .site-title {
+    display: none !important;
+  }
+
+  /* 自定义顶部标题样式（只显示一次，可点击） */
+  .custom-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .custom-title:hover {
+    color: #4299e1; /* 鼠标悬浮变蓝 */
+  }
+
   /* 页脚样式：分行 + 隐藏域名 */
   footer p, .site-footer p {
     white-space: pre-line !important; /* 文字分行 */
@@ -158,19 +177,10 @@ title: 毛刚的个人博客
   footer div:first-child, .site-footer .footer-col:first-child {
     display: none !important;
   }
-
-  /* 顶部标题样式（可点击） */
-  .site-title, h1 {
-    cursor: pointer; /* 鼠标变小手 */
-    text-align: center; /* 标题居中 */
-    margin: 20px 0; /* 上下留白 */
-  }
 </style>
 
-<!-- 顶部可点击的博客标题 -->
-<a href="/" style="text-decoration: none; color: inherit;">
-  <h1>毛刚的个人博客</h1>
-</a>
+<!-- 自定义顶部标题（只显示一次，点击返回主页） -->
+<div class="custom-title" onclick="window.location.href='/'">毛刚的个人博客</div>
 
 <!-- 三列布局主体 -->
 <div class="home-container">
@@ -250,13 +260,6 @@ document.addEventListener('DOMContentLoaded', function() {
       要认真学习一点东西，必须从不自满开始。<br>
       —— 毛泽东
     `;
-  }
-  // 兼容主题自带的顶部标题点击跳转
-  let title = document.querySelector('.site-title') || document.querySelector('h1');
-  if (title && !title.parentElement.tagName === 'A') {
-    title.onclick = function() {
-      window.location.href = '/';
-    };
   }
 });
 </script>
