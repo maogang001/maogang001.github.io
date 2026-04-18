@@ -5,6 +5,23 @@ title: 毛刚的个人博客
 
 <!-- 自定义样式 -->
 <style>
+  /* 🔥 第一步：彻底隐藏主题自带的头部、标题、域名（核心修复） */
+  /* 隐藏顶部域名+标题 */
+  .site-header, .site-title, .site-branding,
+  .page-heading, .home-heading,
+  /* 隐藏页脚域名 */
+  .site-footer .footer-col-1, .site-footer .footer-col:first-child,
+  /* 兜底：隐藏所有包含域名的元素 */
+  [class*="header"], [class*="title"] {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
   /* 全局布局重置 */
   .home-container {
     width: 95%;
@@ -144,21 +161,22 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* ✅ 精准隐藏域名（只删maogang001github.io，不影响其他元素） */
-  .site-footer .footer-col-1 {
-    display: none !important; /* 只隐藏页脚第一列的域名 */
-  }
   /* 页脚文字样式（只保留座右铭） */
+  .site-footer {
+    margin-top: 20px !important;
+    padding: 20px 0 !important;
+    border-top: 1px solid #eee !important;
+  }
   .site-footer p {
     white-space: pre-line !important;
     line-height: 2 !important;
     text-align: center !important;
     margin: 0 auto !important;
-    padding: 20px 0 !important;
+    padding: 0 !important;
   }
 </style>
 
-<!-- 顶部：动画栏 -->
+<!-- 顶部：动画栏（唯一的顶部元素） -->
 <div class="top-animation-bar">
   <div class="cute-animation">
     <div class="ball ball1"></div><div class="ball ball2"></div><div class="ball ball3"></div><div class="ball ball4"></div><div class="ball ball5"></div>
@@ -205,10 +223,18 @@ title: 毛刚的个人博客
   </div>
 </div>
 
-<!-- 页脚文字脚本（只处理座右铭，不删任何元素） -->
+<!-- 页脚文字脚本（只设置座右铭） -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 只设置页脚座右铭文字，不做任何删除操作
+  // 1. 兜底删除：如果还有域名文字，直接清空内容
+  const allElements = document.querySelectorAll('*');
+  allElements.forEach(el => {
+    if (el.textContent.includes('maogang001github.io') || el.textContent.includes('毛刚的个人博客') && el.className.includes('site')) {
+      el.textContent = ''; // 清空内容，不删除元素（避免页面崩）
+    }
+  });
+
+  // 2. 设置页脚座右铭
   let footerText = document.querySelector('.site-footer p');
   if (footerText) {
     footerText.innerHTML = `
