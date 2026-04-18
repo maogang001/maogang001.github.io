@@ -1,13 +1,27 @@
 title: 毛刚的个人博客
 author: 毛刚
-email: your-email@example.com
+email: 1871655681@qq.com
 description: >-
   记录学习笔记、技术文章、生活思考
 baseurl: ""
 url: "https://maogang001.github.io"
 github_username: maogang001
 
-theme: minima
-markdown: kramdown
+# 替换成高颜值主题配置
+remote_theme: pages-themes/minimal@v0.2.0
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
+
+# 自定义样式（核心：让页面变好看）
+minimal:
+  skin: dark # 深色模式（护眼，适合写文章）
+  favicon: /favicon.ico
+  font_choice: system # 系统字体，更舒服
+  show_excerpts: true # 显示文章摘要
+  date_format: "%Y-%m-%d" # 日期格式
+
+# 导航菜单
+header_pages:
+  - about.md
+  - index.md
