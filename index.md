@@ -3,7 +3,7 @@ layout: home
 title: 毛刚的个人博客
 ---
 
-<!-- 自定义三列布局样式 -->
+<!-- 自定义样式 -->
 <style>
   /* 全局布局重置 */
   .home-container {
@@ -17,7 +17,7 @@ title: 毛刚的个人博客
     font-family: "Microsoft YaHei", sans-serif;
   }
 
-  /* 左侧栏：博客标题+个人介绍+访问量 */
+  /* 左侧栏样式 */
   .left-column {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
@@ -40,49 +40,6 @@ title: 毛刚的个人博客
     line-height: 1.6;
     text-align: center;
   }
-  .personal-intro a {
-    color: #4299e1;
-    text-decoration: none;
-  }
-  .personal-intro a:hover {
-    text-decoration: underline;
-  }
-
-  /* 中间栏：图片展示区 */
-  .middle-column {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-  }
-  .img-container {
-    text-align: center;
-  }
-  .img-container img {
-    max-width: 100%;
-    max-height: 350px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  .img-desc {
-    margin-top: 15px;
-    color: #777;
-    font-size: 14px;
-  }
-
-  /* 右侧栏：导航菜单 */
-  .right-column {
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 10px 0;
-    background: #f9f9f9;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
   .nav-item {
     padding: 15px 20px;
     border-bottom: 1px solid #eee;
@@ -102,11 +59,51 @@ title: 毛刚的个人博客
     font-weight: bold;
   }
 
-  /* 底部动画栏 */
-  .animation-bar {
+  /* 中间栏样式：完全填充空白 */
+  .middle-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0 !important; /* 去掉内边距 */
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: stretch; /* 拉伸子元素填满高度 */
+    justify-content: center;
+    min-height: 400px;
+    overflow: hidden; /* 防止图片溢出圆角 */
+  }
+  .img-container {
+    width: 100%; /* 容器占满中间栏宽度 */
+    height: 100%; /* 容器占满中间栏高度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .img-container img {
+    width: 100%; /* 图片宽度铺满容器 */
+    height: 100%; /* 图片高度铺满容器 */
+    object-fit: cover; /* 图片铺满且不变形（裁剪多余部分） */
+    border-radius: 7px; /* 适配外层圆角（减1px避免边框重叠） */
+    box-shadow: none; /* 去掉阴影，避免遮挡 */
+  }
+  .img-desc {
+    display: none; /* 隐藏图片下方的~，避免占空间 */
+  }
+
+  /* 右侧栏样式 */
+  .right-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px 0;
+    background: #f9f9f9;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  /* 顶部动画栏（替换原来的标题） */
+  .top-animation-bar {
     width: 95%;
     max-width: 1200px;
-    margin: 20px auto 40px;
+    margin: 20px auto;
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 20px;
@@ -114,7 +111,6 @@ title: 毛刚的个人博客
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     text-align: center;
   }
-  /* 可爱的浮动小球动画 */
   .cute-animation {
     display: flex;
     justify-content: center;
@@ -148,74 +144,56 @@ title: 毛刚的个人博客
     50% { transform: translateY(-20px); }
   }
 
-  /* 隐藏主题自带的顶部域名、重复标题 */
-  .site-header, .page-heading, .site-title {
-    display: none !important;
-  }
-
-  /* 自定义顶部标题样式（只显示一次，可点击） */
-  .custom-title {
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-  .custom-title:hover {
-    color: #4299e1; /* 鼠标悬浮变蓝 */
-  }
-
-  /* 页脚样式：分行 + 隐藏域名 */
-  footer p, .site-footer p {
-    white-space: pre-line !important; /* 文字分行 */
-    line-height: 2 !important; /* 行间距 */
-    text-align: center !important; /* 居中 */
-  }
-  /* 隐藏底部的域名文字 */
+  /* 隐藏所有红色区域文字（标题+底部域名） */
+  .site-header, .page-heading, .site-title, 
   footer div:first-child, .site-footer .footer-col:first-child {
     display: none !important;
   }
+
+  /* 页脚文字样式 */
+  footer p, .site-footer p {
+    white-space: pre-line !important;
+    line-height: 2 !important;
+    text-align: center !important;
+  }
 </style>
 
-<!-- 自定义顶部标题（只显示一次，点击返回主页） -->
-<div class="custom-title" onclick="window.location.href='/'">毛刚的个人博客</div>
+<!-- 顶部：用绿色动画栏替换原来的红色标题 -->
+<div class="top-animation-bar">
+  <div class="cute-animation">
+    <div class="ball ball1"></div><div class="ball ball2"></div><div class="ball ball3"></div><div class="ball ball4"></div><div class="ball ball5"></div>
+    <div class="ball ball6"></div><div class="ball ball7"></div><div class="ball ball8"></div><div class="ball ball9"></div><div class="ball ball10"></div>
+    <div class="ball ball11"></div><div class="ball ball12"></div><div class="ball ball13"></div><div class="ball ball14"></div><div class="ball ball15"></div>
+  </div>
+</div>
 
 <!-- 三列布局主体 -->
 <div class="home-container">
-  <!-- 左侧栏：基础导航 + 访问量统计 -->
+  <!-- 左侧栏 -->
   <div class="left-column">
     <div class="blog-title">基础导航</div>
     <div class="nav-item"><a href="/life">我的生活记录</a></div>
     <div class="nav-item"><a href="/diary">我的日记</a></div>
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
-    <!-- 分隔线 -->
     <hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
-
-    <!-- 访问量统计 -->
     <div class="blog-title">访问量</div>
     <div class="personal-intro">
-      访问
-      <br>
+      访问<br>
       <span style="font-size:20px; font-weight:bold; color:#4299e1;">
-        <script type="text/javascript" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <span id="busuanzi_value_site_pv"></span>
-      </span>
-      <br>
-      次
+      </span><br>次
     </div>
   </div>
 
-  <!-- 中间栏：图片展示区 -->
+  <!-- 中间栏：图片完全填充 -->
   <div class="middle-column">
     <div class="img-container">
       <img src="./photos/007.jpg" alt="我的图片">
-      <div class="img-desc">~</div>
     </div>
   </div>
 
-  <!-- 右侧栏：高级导航菜单 -->
+  <!-- 右侧栏 -->
   <div class="right-column">
     <div class="blog-title">高级导航</div>
     <div class="nav-item"><a href="/life">我的生活记录</a></div>
@@ -227,31 +205,9 @@ title: 毛刚的个人博客
   </div>
 </div>
 
-<!-- 底部动画栏 -->
-<div class="animation-bar">
-  <div class="cute-animation">
-    <div class="ball ball1"></div>
-    <div class="ball ball2"></div>
-    <div class="ball ball3"></div>
-    <div class="ball ball4"></div>
-    <div class="ball ball5"></div>
-    <div class="ball ball6"></div>
-    <div class="ball ball7"></div>
-    <div class="ball ball8"></div>
-    <div class="ball ball9"></div>
-    <div class="ball ball10"></div>
-    <div class="ball ball11"></div>
-    <div class="ball ball12"></div>
-    <div class="ball ball13"></div>
-    <div class="ball ball14"></div>
-    <div class="ball ball15"></div>
-  </div>
-</div>
-
-<!-- 页脚文字分行脚本 -->
+<!-- 页脚文字脚本 -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // 处理页脚文字分行
   let footerText = document.querySelector('footer p') || document.querySelector('.site-footer p');
   if (footerText) {
     footerText.innerHTML = `
