@@ -44,9 +44,7 @@ title: 我的收藏
     text-decoration: underline;
   }
 </style>
-
 <div class="page-container">
-  <h2>我的收藏</h2>
   <ul>
     <li>📚 技术博客：<a href="#" target="_blank">阮一峰的网络日志</a></li>
     <li>🔧 工具：VS Code、GitHub Desktop、Typora</li>

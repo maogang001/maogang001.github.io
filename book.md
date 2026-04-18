@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 我的日记
+title: 我的阅读
 ---
 
 <style>
@@ -44,7 +44,6 @@ title: 我的日记
 </style>
 
 <div class="page-container">
-  <h2>我的日记</h2>
   <div class="diary-item">
     <span class="diary-date">2025-12-30</span>：今天给博客加了可爱的动画，超开心！
   </div>

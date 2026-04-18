@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 我的生活记录
+title: 生活记录
 ---
 
 <style>
@@ -43,7 +43,6 @@ title: 我的生活记录
 </style>
 
 <div class="page-container">
-  <h2>我的生活记录</h2>
   <p>记录生活中的小美好～</p>
   <img src="https://picsum.photos/800/400" alt="生活点滴">
   <p>周末去公园散步，阳光很好～</p>

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 我的技术笔记
+title: 技术笔记
 ---
 
 <style>
@@ -37,9 +37,7 @@ title: 我的技术笔记
     text-decoration: underline;
   }
 </style>
-
 <div class="page-container">
-  <h2>我的技术笔记</h2>
   <h3>GitHub Pages 搭建博客</h3>
   <ul>
     <li>1. 创建「用户名.github.io」仓库</li>

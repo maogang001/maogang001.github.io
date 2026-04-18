@@ -1,6 +1,5 @@
 ---
 layout: page
-title: 这就是我!
 ---
 
 <style>
@@ -36,44 +35,40 @@ title: 这就是我!
     text-decoration: underline;
   }
 </style>
-
 <div class="page-container">
-  <h2>这就是我！</h2>
-  <p>大家好，我是毛刚～</p>
-  <p>喜欢记录生活、写技术笔记，用文字和代码沉淀成长。</p>
-  <p>这是我的个人博客，分享我的日常、日记和学习心得～</p>
+  <p>我是刚～</p>
   <a href="/" class="back-home">← 返回首页</a>
-  <img src="./photos/008.jpg" alt="毛刚的个人照片" class="profile-img">
 </div>
-![008](\photos\008.jpg)
+
+![008](F:\git _project\maogang001.github.io\photos\008.jpg)
 
 ------
 
-![001](\photos\001.jpg)
+![](F:\git _project\maogang001.github.io\photos\001.jpg)
 
 ------
 
-![002](\photos\002.jpg)
+![002](F:\git _project\maogang001.github.io\photos\002.jpg)
 
 ------
 
-![003](\photos\003.jpg)
+![003](F:\git _project\maogang001.github.io\photos\003.jpg)
 
 ------
 
-![004](\photos\004.jpg)
+![004](F:\git _project\maogang001.github.io\photos\004.jpg)
 
 ------
 
-![005](photos\005.jpg)
+![005](F:\git _project\maogang001.github.io\photos\005.jpg)
 
 ------
 
-![006](\photos\006.jpg)
+![006](F:\git _project\maogang001.github.io\photos\006.jpg)
 
 ------
 
-![007](\photos\007.jpg)
+![007](F:\git _project\maogang001.github.io\photos\007.jpg)
 
 
 
