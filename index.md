@@ -139,6 +139,10 @@ title: 毛刚的个人博客
   .ball9 { background: #f6d365; animation-delay: 2.4s; }
   .ball10 { background: #84fab0; animation-delay: 2.7s; }
   .ball11 { background: #8fd3f4; animation-delay: 3.0s; }
+  .ball12 { background: #8fd3f4; animation-delay: 3.3s; }
+  .ball13 { background: #f6d365; animation-delay: 3.6s; }
+  .ball14 { background: #84fab0; animation-delay: 4.2s; }
+  .ball15 { background: #8fd3f4; animation-delay: 4.5s; }
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
@@ -168,7 +172,7 @@ title: 毛刚的个人博客
   <div class="middle-column">
     <div class="img-container">
       <!-- 替换成你的图片地址（上传到仓库后改路径） -->
-      <img src="https://picsum.photos/600/300" alt="我的图片">
+      <img src="./photos/005.jpg" alt="我的图片">
       <div class="img-desc">~</div>
     </div>
   </div>
@@ -180,12 +184,12 @@ title: 毛刚的个人博客
     <div class="nav-item"><a href="/tech-notes">我的技术笔记</a></div>
     <div class="nav-item"><a href="/share">我的日常分享</a></div>
     <div class="nav-item"><a href="/collection">我的收藏</a></div>
+	<div class="nav-item"><a href="/aboutme">关于俺</a></div>
   </div>
 </div>
 
 <!-- 底部动画栏 -->
 <div class="animation-bar">
-  这一排显示一些动画
   <div class="cute-animation">
     <div class="ball ball1"></div>
     <div class="ball ball2"></div>
@@ -198,6 +202,10 @@ title: 毛刚的个人博客
     <div class="ball ball9"></div>
     <div class="ball ball10"></div>
 	<div class="ball ball11"></div>
+	<div class="ball ball12"></div>
+    <div class="ball ball13"></div>
+    <div class="ball ball14"></div>
+	<div class="ball ball15"></div>
   </div>
 </div>
 
